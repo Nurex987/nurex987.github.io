@@ -21,7 +21,7 @@ Then visit <http://localhost:8000>. Stop the server with `Ctrl+C`.
 - **CV:** when you have a CV PDF, put it in this folder (for example, `Alani-Nurudeen-CV.pdf`) and add a download link near the hero actions:
 
   ```html
-  <a class="button button-secondary" href="Alani-Nurudeen-CV.pdf" download>Download my CV</a>
+  <a class='button button-secondary' href='Alani-Nurudeen-CV.pdf' download>Download my CV</a>
   ```
 
 - **Colors, layout, and responsive styles:** edit the variables near the top of `styles.css`, then adjust the relevant selectors below them.
@@ -31,8 +31,8 @@ The contact form checks its fields and prepares a copyable message. It does not 
 
 ## Publish free with GitHub Pages
 
-1. Create a new, public repository on GitHub. You can call it `nurex344.github.io` for a personal site or use another repository name.
-2. In this folder, initialize Git, commit the site files, and push them to the repository's `main` branch:
+1. The public repository for this portfolio is [github.com/Nurex987/nurex987.github.io](https://github.com/Nurex987/nurex987.github.io).
+2. If you make changes locally, initialize Git in this folder if needed, commit the site files, and push them to the repository's `main` branch:
 
    ```powershell
    git init
@@ -43,10 +43,10 @@ The contact form checks its fields and prepares a copyable message. It does not 
    git push -u origin main
    ```
 
-   Replace `REPOSITORY-NAME` with the repository you created. If Git asks, sign in using GitHub's recommended credential flow.
+   If Git asks, sign in using GitHub's recommended credential flow.
 
 3. On GitHub, open the repository's **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and the `/(root)` folder, then save.
-4. Wait for the Pages deployment to finish. GitHub displays the published address in the Pages settings. A personal `nurex987.github.io` repository uses `https://nurex987.github.io/`; another repository generally uses `https://nurex987.github.io/REPOSITORY-NAME/`.
+4. Wait for the Pages deployment to finish. The published site will be at <https://nurex987.github.io/>.
 
 ## Add a custom domain later
 
