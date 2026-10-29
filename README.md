@@ -32,21 +32,23 @@ The contact form checks its fields and prepares a copyable message. It does not 
 ## Publish free with GitHub Pages
 
 1. The public repository for this portfolio is [github.com/Nurex987/nurex987.github.io](https://github.com/Nurex987/nurex987.github.io).
-2. If you make changes locally, initialize Git in this folder if needed, commit the site files, and push them to the repository's `main` branch:
+2. To make a local copy to edit and sync with GitHub, clone the repository:
 
    ```powershell
-   git init
-   git add index.html styles.css script.js favicon.svg README.md
-   git commit -m "Build NRX portfolio"
-   git branch -M main
-   git remote add origin https://github.com/Nurex987/nurex987.github.io.git
-   git push -u origin main
+   git clone https://github.com/Nurex987/nurex987.github.io.git
+   cd nurex987.github.io
    ```
 
-   If Git asks, sign in using GitHub's recommended credential flow.
+   Edit the files in that folder, then save and upload your changes with:
 
-3. On GitHub, open the repository's **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and the `/(root)` folder, then save.
-4. Wait for the Pages deployment to finish. The published site will be at <https://nurex987.github.io/>.
+   ```powershell
+   git add index.html styles.css script.js favicon.svg README.md
+   git commit -m "Update portfolio"
+   git push
+   ```
+
+3. GitHub Pages is already set to deploy from the `main` branch and the repository root. To change that later, open **Settings → Pages** and update **Build and deployment**.
+4. The published site is at <https://nurex987.github.io/>.
 
 ## Add a custom domain later
 
