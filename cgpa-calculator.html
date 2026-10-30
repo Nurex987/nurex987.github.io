@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A simple interactive CGPA calculator built by Alani Nurudeen." />
+    <meta name="theme-color" content="#f8faf8" />
+    <title>CGPA Calculator | Alani Nurudeen</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="cgpa-calculator.css" />
+    <script src="script.js" defer></script>
+    <script src="cgpa-calculator.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to calculator</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html#home" aria-label="NRX — portfolio home">
+          <span class="brand-mark">N<span>R</span>X</span>
+          <span class="brand-caption">ALANI NURUDEEN</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu">
+          <span></span><span></span>
+        </button>
+        <nav class="primary-nav" id="primary-navigation" aria-label="Main navigation">
+          <a href="index.html#home">Home</a>
+          <a href="index.html#projects">Projects</a>
+          <a class="nav-contact" href="index.html#contact">Contact <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="calculator-hero" aria-labelledby="page-title">
+        <div class="container">
+          <a class="calculator-back" href="index.html#projects"><span aria-hidden="true">←</span> Back to projects</a>
+          <p class="section-kicker">STUDENT TOOL / INTERACTIVE PROJECT</p>
+          <h1 id="page-title">CGPA calculator</h1>
+          <p class="calculator-intro">Estimate your grade point average by entering course grades and credit units. Add every course you want included in the calculation.</p>
+        </div>
+      </section>
+
+      <section class="calculator-section" aria-label="CGPA calculator tool">
+        <div class="container calculator-layout">
+          <form class="calculator-card" id="cgpa-form">
+            <div class="calculator-card-heading">
+              <div>
+                <p class="calculator-eyebrow">YOUR COURSES</p>
+                <h2>Enter course results</h2>
+              </div>
+              <button class="text-button" type="button" id="add-course">+ Add course</button>
+            </div>
+
+            <p class="calculator-help">Use the grade and credit units shown on your result sheet.</p>
+            <div class="course-list" id="course-list" aria-label="Course entries">
+              <div class="course-row">
+                <label class="course-code-field"><span>Course code</span><input name="courseCode" type="text" maxlength="20" autocomplete="off" placeholder="e.g. CSC 101" required /></label>
+                <label><span>Grade</span><select name="grade" required><option value="" selected disabled>Select</option><option value="5">A · 5 points</option><option value="4">B · 4 points</option><option value="3">C · 3 points</option><option value="2">D · 2 points</option><option value="1">E · 1 point</option><option value="0">F · 0 points</option></select></label>
+                <label><span>Credit units</span><input name="units" type="number" min="1" max="30" step="1" inputmode="numeric" placeholder="3" required /></label>
+                <button class="remove-course" type="button" aria-label="Remove course" disabled>×</button>
+              </div>
+            </div>
+
+            <template id="course-row-template">
+              <div class="course-row">
+                <label class="course-code-field"><span>Course code</span><input name="courseCode" type="text" maxlength="20" autocomplete="off" placeholder="e.g. CSC 101" required /></label>
+                <label><span>Grade</span><select name="grade" required><option value="" selected disabled>Select</option><option value="5">A · 5 points</option><option value="4">B · 4 points</option><option value="3">C · 3 points</option><option value="2">D · 2 points</option><option value="1">E · 1 point</option><option value="0">F · 0 points</option></select></label>
+                <label><span>Credit units</span><input name="units" type="number" min="1" max="30" step="1" inputmode="numeric" placeholder="3" required /></label>
+                <button class="remove-course" type="button" aria-label="Remove course">×</button>
+              </div>
+            </template>
+
+            <div class="calculator-actions">
+              <button class="button button-primary" type="submit">Calculate CGPA <span aria-hidden="true">↗</span></button>
+              <button class="button button-secondary" type="button" id="load-example">Try example</button>
+              <button class="reset-button" type="button" id="reset-calculator">Reset</button>
+            </div>
+            <p class="calculator-status" id="calculator-status" role="status" aria-live="polite">Add course details, then calculate your result.</p>
+          </form>
+
+          <aside class="calculator-side" aria-label="Calculation result and grade scale">
+            <section class="result-card" aria-labelledby="result-heading">
+              <p class="calculator-eyebrow">CALCULATION</p>
+              <h2 id="result-heading">Your CGPA</h2>
+              <div class="result-number"><output id="cgpa-result" aria-live="polite">—</output><span>/ 5.00</span></div>
+              <dl class="result-metrics">
+                <div><dt>Total credit units</dt><dd id="total-units">0</dd></div>
+                <div><dt>Quality points</dt><dd id="quality-points">0</dd></div>
+                <div><dt>Courses included</dt><dd id="course-count">0</dd></div>
+              </dl>
+              <p class="formula-note">CGPA = total quality points ÷ total credit units</p>
+            </section>
+
+            <section class="grade-scale-card" aria-labelledby="scale-heading">
+              <p class="calculator-eyebrow">GRADE POINTS</p>
+              <h2 id="scale-heading">5-point scale</h2>
+              <ul class="grade-scale">
+                <li><span>A</span><strong>5</strong></li>
+                <li><span>B</span><strong>4</strong></li>
+                <li><span>C</span><strong>3</strong></li>
+                <li><span>D</span><strong>2</strong></li>
+                <li><span>E</span><strong>1</strong></li>
+                <li><span>F</span><strong>0</strong></li>
+              </ul>
+            </section>
+          </aside>
+        </div>
+        <div class="container">
+          <p class="calculator-disclaimer">This tool uses a common five-point grade mapping as an estimate. Follow your department's current handbook for official calculations, including how repeated courses are treated.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer calculator-footer">
+      <div class="container footer-inner"><p>© <span id="current-year">2026</span> Alani Nurudeen</p><p>Made with care &amp; curiosity <span aria-hidden="true">✳</span></p><a href="index.html#projects">Back to portfolio ↑</a></div>
+    </footer>
+  </body>
+</html>

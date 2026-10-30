@@ -1,0 +1,77 @@
+.calculator-hero { padding: 52px 0 42px; background: #f8faf8; background-image: radial-gradient(#d6e0d8 .7px, transparent .7px); background-size: 18px 18px; }
+.calculator-hero .container { position: relative; }
+.calculator-back { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 39px; color: #53665a; font-size: 11px; font-weight: 600; }
+.calculator-back:hover { color: var(--green); }
+.calculator-back span { color: var(--green); font-size: 16px; }
+.calculator-hero .section-kicker { margin-bottom: 12px; }
+.calculator-hero h1 { margin: 0; font-size: clamp(42px, 6vw, 64px); font-weight: 650; letter-spacing: -3.6px; line-height: 1.05; }
+.calculator-intro { max-width: 590px; margin: 16px 0 0; color: #68756e; font-size: 14px; line-height: 1.8; }
+.calculator-section { padding: 35px 0 76px; background: #f5f8f5; }
+.calculator-layout { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(270px, .8fr); align-items: start; gap: 18px; }
+.calculator-card, .result-card, .grade-scale-card { border: 1px solid #e2e9e3; border-radius: 5px; background: #fff; box-shadow: 0 12px 34px rgb(27 61 42 / 4%); }
+.calculator-card { padding: 25px 26px 20px; }
+.calculator-card-heading { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding-bottom: 17px; border-bottom: 1px solid #edf1ee; }
+.calculator-eyebrow { margin: 0 0 6px; color: #849188; font-family: var(--mono); font-size: 8px; font-weight: 600; letter-spacing: 1px; }
+.calculator-card h2, .result-card h2, .grade-scale-card h2 { margin: 0; color: #26352c; font-size: 17px; font-weight: 630; letter-spacing: -.35px; }
+.text-button, .reset-button { border: 0; background: transparent; color: var(--green); cursor: pointer; font-size: 11px; font-weight: 650; }
+.text-button { padding: 8px 0 8px 8px; white-space: nowrap; }
+.text-button:hover, .reset-button:hover { text-decoration: underline; text-underline-offset: 3px; }
+.calculator-help { margin: 16px 0 13px; color: #758178; font-size: 10px; }
+.course-list { display: grid; gap: 10px; }
+.course-row { display: grid; grid-template-columns: minmax(130px, 1.3fr) minmax(125px, .9fr) minmax(95px, .65fr) 32px; align-items: end; gap: 10px; padding: 12px; border: 1px solid #e9eeea; border-radius: 4px; background: #fbfcfb; }
+.course-row label { display: block; min-width: 0; }
+.course-row label > span { display: block; margin-bottom: 5px; color: #6d7a71; font-size: 9px; font-weight: 600; }
+.course-row input, .course-row select { width: 100%; height: 39px; padding: 0 9px; border: 1px solid #e0e8e1; border-radius: 3px; background: #fff; color: #27362d; font-size: 11px; }
+.course-row input::placeholder { color: #a4aea7; }
+.course-row input:focus, .course-row select:focus { border-color: #87a991; outline: 3px solid #e3efe5; }
+.remove-course { display: grid; width: 32px; height: 39px; place-items: center; border: 1px solid #e5ebe6; border-radius: 3px; background: #fff; color: #7c8980; cursor: pointer; font-size: 19px; line-height: 1; }
+.remove-course:hover:not(:disabled) { border-color: #c98c83; color: #9b4c40; }
+.remove-course:disabled { cursor: not-allowed; opacity: .4; }
+.calculator-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 19px; }
+.calculator-actions .button { min-height: 43px; font-size: 10px; }
+.calculator-actions .button span { font-size: 14px; }
+.reset-button { padding: 9px 5px; color: #7a867e; }
+.calculator-status { min-height: 18px; margin: 13px 0 0; color: #758178; font-size: 10px; }
+.calculator-side { display: grid; gap: 14px; }
+.result-card, .grade-scale-card { padding: 21px 22px; }
+.result-card h2, .grade-scale-card h2 { font-size: 15px; }
+.result-number { display: flex; align-items: baseline; gap: 8px; margin: 16px 0 18px; color: #253c2e; }
+.result-number output { font-size: 48px; font-weight: 650; letter-spacing: -2.5px; line-height: 1; }
+.result-number > span { color: #91a096; font-size: 10px; }
+.result-metrics { margin: 0; border-top: 1px solid #edf1ee; }
+.result-metrics div { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 10px 0; border-bottom: 1px solid #edf1ee; }
+.result-metrics dt { color: #77847b; font-size: 10px; }
+.result-metrics dd { margin: 0; color: #394b3f; font-family: var(--mono); font-size: 10px; font-weight: 600; }
+.formula-note { margin: 14px 0 0; color: #87938b; font-size: 9px; line-height: 1.6; }
+.grade-scale-card { background: #fbfcfb; }
+.grade-scale { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin: 14px 0 0; padding: 0; list-style: none; }
+.grade-scale li { display: flex; align-items: center; justify-content: space-between; gap: 7px; padding: 8px 9px; border: 1px solid #e8eee9; border-radius: 3px; background: white; color: #6f7d73; font-size: 10px; }
+.grade-scale strong { color: #334e3b; font-family: var(--mono); font-size: 10px; }
+.calculator-disclaimer { max-width: 880px; margin: 17px 0 0; color: #839087; font-size: 9px; line-height: 1.7; }
+.calculator-footer { background: #f8faf8; }
+
+@media (max-width: 820px) {
+  .calculator-layout { grid-template-columns: 1fr; }
+  .calculator-side { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+@media (max-width: 680px) {
+  .calculator-hero { padding: 36px 0 32px; }
+  .calculator-back { margin-bottom: 30px; }
+  .calculator-hero h1 { font-size: clamp(39px, 11vw, 54px); letter-spacing: -2.8px; }
+  .calculator-intro { font-size: 12px; }
+  .calculator-section { padding: 22px 0 55px; }
+  .calculator-card { padding: 19px 16px 15px; }
+  .course-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 32px; gap: 9px; padding: 10px; }
+  .course-code-field { grid-column: 1 / -1; }
+  .course-row .remove-course { grid-column: 3; grid-row: 2; }
+  .course-row label:nth-child(2) { grid-column: 1; grid-row: 2; }
+  .course-row label:nth-child(3) { grid-column: 2; grid-row: 2; }
+  .calculator-side { grid-template-columns: 1fr; }
+  .result-card, .grade-scale-card { padding: 19px 18px; }
+}
+@media (max-width: 390px) {
+  .calculator-card-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .text-button { padding: 0; }
+  .calculator-actions { align-items: stretch; }
+  .calculator-actions .button { flex: 1 1 auto; }
+}
